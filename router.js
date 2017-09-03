@@ -12,9 +12,8 @@ module.exports = function(app) {
   // Send root route through requireAuth() Middleware
   // then go on to request handler
   app.get('/', requireAuth, function(req, res) {
-    res.send('Hello!');
+    res.send({ message: 'Secert code F@*$K!'});
   });
-
   app.post('/signin', requireSignin, Auth.signin);
   app.post('/signup', Auth.signup);
 }
